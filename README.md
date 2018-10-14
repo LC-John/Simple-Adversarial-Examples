@@ -11,12 +11,15 @@ In addition, as stated by Ian Goodfellow, the attack can be transferred from mod
 As shown below, the 9 images are all "0" to human eyes (and they are all "0" originally in the mnist dataset). We assign label "1" to "9" to them, and perform GD to adjust the input images. The result is that we get 9 images, which are "0" to human beings, but are "1"-"9" to a CNN classification model.
 
 The original images look like...
+
 ![Original zero images](./mnist_attack_cnn/demo_figure/original.jpg)
 
 The transformation during the GD process looks like..
+
 ![Tranformation gif](./mnist_attack_cnn/demo_figure/demo.gif)
 
 The final fake images with label "1" to "9" look like...
+
 ![Fake images](./mnist_attack_cnn/demo_figure/19.0.jpg)
 
 ## Generate Fake examples
@@ -30,15 +33,19 @@ In the demo, we apply INNg-single architecture, and replace the CNN with an MLP 
 As shown below, we sample 2000 data points from a Gaussian distribution at first, and perform transformation upon them iteratively following INNg-single training algorithm.
 
 The real data points are all in the two squares, which looks like...
+
 ![Real distribution](./simple_inng_mlp/figure/ref.jpg)
 
 The original samples from the Gaussian distribution look like...
+
 ![Real distribution](./simple_inng_mlp/figure/0.jpg)
 
 The transorfation looks like...
+
 ![Real distribution](./simple_inng_mlp/figure/demo.gif)
 
 At last, the generated fake samples looks like...
+
 ![Real distribution](./simple_inng_mlp/figure/final.jpg)
 
 ## References
