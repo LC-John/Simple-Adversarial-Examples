@@ -62,7 +62,7 @@ During training, the images transforms, as the border goes darker and the center
 
 The model is not finished training yet, and the latest generated images look like...
 
-![Intermediate images](./mnist_inng_cnn/demo_figure/11.jpgs)
+![Intermediate images](./mnist_inng_cnn/demo_figure/11.jpg)
 
 ## References
 
