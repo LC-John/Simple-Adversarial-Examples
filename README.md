@@ -28,7 +28,7 @@ The mentioned method seems viable to generate new examples, by feeding random sa
 
 Though the low-dimensional manifold problem exists, there are some ways to generate fake examples from some random samples. One simple but very effective way is the INNg. Its original motivation is to use vivid adversarial samples to help the classifier to get more accurate classification surfaces. Yet, we could see it in the other way -- this approach use a classifier to help perform a transformation upon a given distribution (e.g. uniform or gaussian) iteratively, and makes the result distribution as similar to the data distribution as possible.
 
-In the demo, we apply INNg-single architecture, and replace the CNN with an MLP (to make it simple). The data is random generated, and we assume only those in the two squares are real, possitive data points, while others are all fake, negative.
+In the demo in ```simple_inng_mlp```, we apply INNg-single architecture, and replace the CNN with an MLP (to make it simple). The data is random generated, and we assume only those in the two squares are real, possitive data points, while others are all fake, negative.
 
 As shown below, we sample 2000 data points from a Gaussian distribution at first, and perform transformation upon them iteratively following INNg-single training algorithm.
 
@@ -38,15 +38,31 @@ The real data points are all in the two squares, which looks like...
 
 The original samples from the Gaussian distribution look like...
 
-![Real distribution](./simple_inng_mlp/figure/0.jpg)
+![Initial fake distribution](./simple_inng_mlp/figure/0.jpg)
 
 The transorfation looks like...
 
-![Real distribution](./simple_inng_mlp/figure/demo.gif)
+![Transformation of the fake distribution](./simple_inng_mlp/figure/demo.gif)
 
 At last, the generated fake samples looks like...
 
-![Real distribution](./simple_inng_mlp/figure/final.jpg)
+![Final fake distribution](./simple_inng_mlp/figure/final.jpg)
+
+## INNg-Single of CNN on MNIST
+
+As the demo shown in ```mnist_inng_cnn```, an INNg-single CNN-based architecture is trained on the mnist dataset. The training procedure is the same as above.
+
+The initial fake images are basically gaussian noises, as shown...
+
+![Initial fake images](./mnist_inng_cnn/demo_figure/0.jpg)
+
+During training, the images transforms, as the border goes darker and the center goes lighter, and some rough shapes are obtained, as shown...
+
+![Transformation of the images](./mnist_inng_cnn/demo_figure/demo.gif)
+
+The model is not finished training yet, and the latest generated images look like...
+
+![Intermediate images](./mnist_inng_cnn/demo_figure/11.jpgs)
 
 ## References
 

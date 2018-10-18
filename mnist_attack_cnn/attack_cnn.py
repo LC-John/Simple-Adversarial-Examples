@@ -131,7 +131,7 @@ def build_cnn_arch(lr=0.001, img_h=28, img_w=28, img_c=1, padding_setting="SAME"
 
 if __name__ == "__main__":
     
-    dataset = input_data.read_data_sets("mnist/")
+    dataset = input_data.read_data_sets("../mnist/")
     
     b = dataset.test.next_batch(1000)
     neg_candidate = []
@@ -160,7 +160,7 @@ if __name__ == "__main__":
                                                   model["label"]: b[1]})))
     
     neg_images = []
-        
+    
     b = sess.run(neg['neg'])
     neg_images.append(b.reshape(9, 28, 28))
     b = numpy.reshape(b, [9, 784])
